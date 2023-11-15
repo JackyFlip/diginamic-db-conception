@@ -47,6 +47,7 @@ les informations suivantes :
 | prenom_inf      | prénom de l'infirmier/infirmière              | A    | 20     | infirmiers      |
 | prenom_m        | prénom du malade                              | A    | 20     | malades         |
 | rotation_inf    | rotation de l'infirmier/infirmière            | AN   | 20     | infirmiers      |
+| salaire_inf     | salaire de l'infirmier/infirmière             | N    | 10     | infirmiers      |
 | specialite_doc  | spécialité du docteur                         | A    | 20     | docteurs        |
 | tel_doc         | numéro de téléphone du docteur                | AN   | 12     | docteurs        |
 | tel_inf         | numéro de téléphone de l'infirmier/infirmière | AN   | 12     | infirmiers      |
