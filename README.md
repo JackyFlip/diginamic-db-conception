@@ -60,10 +60,10 @@ les informations suivantes :
 ### MLD
 
 ```
-docteurs (num_employe, nom, prenom, adresse, tel, specialite)
+docteurs(num_employe, nom, prenom, adresse, tel, specialite)
 services(code, nom, batiment, #num_directeur)
 salles(id_salle, num_salle, nb_lits, #num_inf)
-malades (num_malade, nom, prenom, adresse, tel)
+malades(num_malade, nom, prenom, adresse, tel)
 infirmiers(num_employe, nom, prenom, adresse, tel, rotation, salaire, #code_service)
 services_salles(code_service, id_salle)
 hospitalisations(num_malade, id_salle, num_lit, diagnostic)
