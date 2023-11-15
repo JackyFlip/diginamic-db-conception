@@ -1,5 +1,27 @@
 # diginamic-db-conception
 
+### Enoncé
+
+On se propose de modéliser la base de données d'un hôpital. L'analyse de l'existant a dégagé
+les informations suivantes :
+
+- L'hôpital a un ensemble d'employés qui sont des docteurs et des infirmières. Chaque
+  employé possède un numéro d'employé, un nom, un prénom, une adresse et un numéro
+  de téléphone.
+- L'hôpital est composé de plusieurs services, pour lesquels on connaît le code, le nom, le
+  bâtiment et le directeur, qui est en fait un docteur.
+- Chaque service contient plusieurs salles. Une salle est représentée par un numéro, un
+  surveillant et le nombre de lits qu'elle possède. Le numéro de salle est local à un service.
+- Un surveillant est un infirmier.
+- Un infirmier est affecté à un service et à un seul.
+- Les docteurs ne sont pas affectés à un service particulier, mais on connaît leur spécialité.
+- On connaît aussi pour chaque infirmier sa rotation et son salaire.
+- Les malades de l'hôpital sont représentés par un numéro, un nom, un prénom, une
+  adresse et un numéro de téléphone.
+- Un malade est hospitalisé dans une salle avec un numéro de lit et son diagnostic. Il est
+  soigné par un docteur. Au cas où il y a des complications, il peut être transféré dans un
+  autre service avec une autre salle.
+
 ### Dictionnaire des données
 
 | Nom             | Désignation                                   | Type | Taille | Entité          |
