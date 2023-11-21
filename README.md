@@ -77,63 +77,63 @@ hospitalisations(num_malade, id_salle, num_lit, diagnostic)
 
 ```SQL
 CREATE TABLE docteurs (
-    num_employe varchar(8) NOT NULL,
-    nom varchar(20),
-    prenom varchar(20),
-    adresse varchar(80),
-    tel varchar(12),
-    specialite varchar(20),
+    num_employe VARCHAR(8) NOT NULL,
+    nom VARCHAR(20),
+    prenom VARCHAR(20),
+    adresse VARCHAR(80),
+    tel VARCHAR(12),
+    specialite VARCHAR(20),
     PRIMARY KEY (num_employe)
 ) ENGINE = InnoDB;
 
 CREATE TABLE hospitalisations (
-    num_lit int(10),
-    diagnostic varchar(80),
-    num_malade varchar(8) NOT NULL,
-    id_salle int(10) NOT NULL
+    num_lit INT,
+    diagnostic VARCHAR(80),
+    num_malade VARCHAR(8) NOT NULL,
+    id_salle INT NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE infirmiers (
-    num_employe varchar(8) NOT NULL,
-    nom varchar(20),
-    prenom varchar(20),
-    adresse varchar(80),
-    tel varchar(12),
-    rotation varchar(20),
-    salaire int(10),
-    code_service varchar(4) NOT NULL,
+    num_employe VARCHAR(8) NOT NULL,
+    nom VARCHAR(20),
+    prenom VARCHAR(20),
+    adresse VARCHAR(80),
+    tel VARCHAR(12),
+    rotation VARCHAR(20),
+    salaire INT,
+    code_service VARCHAR(4) NOT NULL,
     PRIMARY KEY (num_employe)
 ) ENGINE = InnoDB;
 
 CREATE TABLE malades (
-    num_malade varchar(8) NOT NULL,
-    nom varchar(20),
-    prenom varchar(20),
-    adresse varchar(80),
-    tel varchar(12),
+    num_malade VARCHAR(8) NOT NULL,
+    nom VARCHAR(20),
+    prenom VARCHAR(20),
+    adresse VARCHAR(80),
+    tel VARCHAR(12),
     PRIMARY KEY (num_malade)
 ) ENGINE = InnoDB;
 
 CREATE TABLE salles (
-    id_salle int(10) NOT NULL AUTO_INCREMENT,
-    num_salle varchar(8),
-    nb_lits int(10),
-    num_inf varchar(8) NOT NULL,
+    id_salle INT NOT NULL AUTO_INCREMENT,
+    num_salle VARCHAR(8),
+    nb_lits INT,
+    num_inf VARCHAR(8) NOT NULL,
     PRIMARY KEY (id_salle)
 ) ENGINE = InnoDB;
 
 CREATE TABLE services (
-    code varchar(4) NOT NULL,
-    nom varchar(20),
-    batiment varchar(20),
-    directeur varchar(8) NOT NULL,
+    code VARCHAR(4) NOT NULL,
+    nom VARCHAR(20),
+    batiment VARCHAR(20),
+    directeur VARCHAR(8) NOT NULL,
     PRIMARY KEY (code)
 ) ENGINE = InnoDB;
 
 CREATE TABLE services_salles (
-    servicescode varchar(4) NOT NULL,
-    sallesid_salle int(10) NOT NULL,
-    PRIMARY KEY (servicescode, sallesid_salle)
+    code_service VARCHAR(4) NOT NULL,
+    id_salle INT NOT NULL,
+    PRIMARY KEY (code_service, id_salle)
 ) ENGINE = InnoDB;
 
 ALTER TABLE
@@ -144,12 +144,12 @@ ADD
 ALTER TABLE
     services_salles
 ADD
-    CONSTRAINT FK_services_salles_services FOREIGN KEY (servicescode) REFERENCES services (code);
+    CONSTRAINT FK_services_salles_services FOREIGN KEY (code_service) REFERENCES services (code);
 
 ALTER TABLE
     services_salles
 ADD
-    CONSTRAINT FK_services_salles_salles FOREIGN KEY (sallesid_salle) REFERENCES salles (id_salle);
+    CONSTRAINT FK_services_salles_salles FOREIGN KEY (id_salle) REFERENCES salles (id_salle);
 
 ALTER TABLE
     hospitalisations
